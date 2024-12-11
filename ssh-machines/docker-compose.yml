@@ -1,0 +1,423 @@
+version: '3.8'
+services:
+  proxy:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: proxyPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.2 # Set a specific IP address for hidden_network
+      interface1:
+        ipv4_address: 10.10.50.2 # Set a specific IP address for hidden_network
+
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+        
+  host_lore:
+    build:
+      context: .
+      args:
+        USERNAME: ivn
+        USER_PASSWORD: ivnPassword
+    networks:
+      interface1:
+        ipv4_address: 10.10.50.3 # Assign a specific IP address for this container in "hidden_network"
+    ports:
+      - "2223:22" # Map port 2222 on the host to port 22 in the container
+    #deploy:
+    #  resources:
+    #    limits:
+    #      cpus: "0.5"
+    #      memory: 512M
+    #    reservations:
+    #      cpus: "0.25"
+    #      memory: 20M
+        
+  hidden_container1:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.3 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+        
+ 
+  hidden_container2:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.4 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+        
+ 
+ 
+  hidden_container3:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.5 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container4:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.6 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container5:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.7 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container6:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.8 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+    
+  hidden_container7:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.9 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+
+  hidden_container8:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.10 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+
+  hidden_container9:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.11 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+
+  hidden_container10:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.12 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+
+  hidden_container11:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.13 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+         
+  hidden_container12:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.14 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container13:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.15 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container14:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.16 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container15:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.17 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container16:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.18 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container17:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.19 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container18:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.20 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container19:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.21 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+  hidden_container20:
+    build:
+      context: .
+      args:
+        USERNAME: proxyUser
+        USER_PASSWORD: hiddenPassword
+    networks:
+      hidden_network:
+        ipv4_address: 10.10.30.22 # Assign a specific IP address for this container in "hidden_network"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 20M
+ 
+
+networks:
+  hidden_network:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: 10.10.30.0/24 # Subnet for hidden_network
+
+  interface1:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: 10.10.50.0/24 # Subnet for interface1

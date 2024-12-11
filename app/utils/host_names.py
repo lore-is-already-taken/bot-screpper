@@ -1,0 +1,12 @@
+hostname = [
+    "CR91LEPC101",
+    "CR91LPEUM01",
+    "CR91LUMEN01",
+    "CR91MPDC201",
+    "CR91MTLCF01",
+    "CR91PACHF01",
+    "CR91PLABA01",
+    "CR91PSJOA01",
+    "CR91PZARF01",
+    "CR91RAMON01",
+]
